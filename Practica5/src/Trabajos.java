@@ -1,10 +1,26 @@
 import java.util.Scanner;
 
 public class Trabajos {
-    // private int idTrabajo;  hacerlo como posicion del array de trabajos
+    private int idTrabajo;  
     private String descripcion;
     private int nHoras = 0;
     private boolean finalizado;
+    private int tipoTrabajo;
+
+    public Trabajos(int idTrabajo, int tipoTrabajo, String descripcion, int nHoras, boolean finalizado) {
+        this.idTrabajo = idTrabajo;
+        this.tipoTrabajo = tipoTrabajo;
+        this.descripcion = descripcion;
+        this.nHoras = nHoras;
+        this.finalizado = false;
+    }
+    public int getTipoTrabajo() {
+        return tipoTrabajo;
+    }
+
+    public int getIdTrabajo() {
+        return idTrabajo;
+    }
 
     public String getDescripcion() {
         return descripcion;
@@ -12,6 +28,14 @@ public class Trabajos {
 
     public int getnHoras() {
         return nHoras;
+    }
+
+    public void setIdTrabajo(int idTrabajo) {
+        this.idTrabajo = idTrabajo;
+    }
+
+    public void setTipoTrabajo(int tipoTrabajo) {
+        this.tipoTrabajo = tipoTrabajo;
     }
 
     public void setDescripcion(String descripcion) {
@@ -26,46 +50,10 @@ public class Trabajos {
         this.finalizado = finalizado;
     }
 
-    private void new_r_mecanica(String descripcion, int nHoras, boolean finalizado) {
-        Scanner sc= new Scanner(System.in);
-        // if (this.idTrabajo > 0) {
-        //     this.idTrabajo = idTrabajo++;
-        // }else{
-        //     this.idTrabajo = 0;
-        // }
-    
-        System.out.println("Introduce una descripcion: ");
-        this.descripcion = sc.nextLine();
-    
-        this.nHoras = 0;
-    }
-    
-    private void new_r_chapapintura(int idTrabajo, String descripcion, int nHoras, boolean finalizado) {
-        Scanner sc= new Scanner(System.in);
-        // if (this.idTrabajo > 0) {
-        //     this.idTrabajo = idTrabajo++;
-        // }else{
-        //     this.idTrabajo = 0;
-        // }
-    
-        System.out.println("Introduce una descripcion: ");
-        this.descripcion = sc.nextLine();
-    
-        this.nHoras = 0;
-    }
-    
-    private void new_revision(String descripcion, int nHoras, boolean finalizado) {
-        Scanner sc= new Scanner(System.in);
-        // if (this.idTrabajo > 0) {
-        //     this.idTrabajo = idTrabajo++;
-        // }else{
-        //     this.idTrabajo = 0;
-        // }
-    
-        System.out.println("Introduce una descripcion: ");
-        this.descripcion = sc.nextLine();
-    
-        this.nHoras = 0;
+    public void costes() {
+        
+        
+
     }
 
 }
