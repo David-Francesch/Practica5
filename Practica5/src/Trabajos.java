@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Trabajos {
-    private int idTrabajo;  
+    private int idTrabajo;
     private String descripcion;
     private int nHoras = 0;
     private boolean finalizado;
     private int tipoTrabajo;
-    private int costePiezas;
+    private double costePiezas;
 
     public Trabajos(int idTrabajo, int tipoTrabajo, String descripcion, int nHoras, boolean finalizado) {
         this.idTrabajo = idTrabajo;
@@ -15,6 +15,7 @@ public class Trabajos {
         this.nHoras = nHoras;
         this.finalizado = false;
     }
+
     public int getTipoTrabajo() {
         return tipoTrabajo;
     }
@@ -31,11 +32,11 @@ public class Trabajos {
         return nHoras;
     }
 
-    public boolean getFinalizado(){
+    public boolean getFinalizado() {
         return finalizado;
     }
 
-    public int getCostePiezas() {
+    public double getCostePiezas() {
         return costePiezas;
     }
 
@@ -50,7 +51,7 @@ public class Trabajos {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
     public void setnHoras(int nHoras) {
         this.nHoras += nHoras;
     }
@@ -59,21 +60,30 @@ public class Trabajos {
         this.finalizado = finalizado;
     }
 
-    public void setCostePiezas(int costePiezas) {
-        this.costePiezas = costePiezas;
+    public void setCostePiezas(Double costePiezas) {
+        this.costePiezas += costePiezas;
     }
 
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Id: "+idTrabajo+", Tipo de trabajo: "+tipoTrabajo+", Descripcion: "+descripcion+", Num horas: "+nHoras+", Finalizado: "+finalizado;
+        return "Id: " + idTrabajo + ", Tipo de trabajo: " + tipoTrabajo + ", Descripcion: " + descripcion
+                + ", Num horas: " + nHoras + ", Finalizado: " + finalizado+", Coste trabajo: "+calculoTrabajo();
     }
 
-    
+    public double calculoTrabajo() {
+        switch (tipoTrabajo) {
+            case 1:
+                return nHoras * 30 + costePiezas * 1.1;
+            case 2:
+                return nHoras * 30 + costePiezas * 1.3;
+            
+            case 3:
+                return nHoras * 30 + 20;
+
+            default:
+                return 0;
+        }
+    }
 
 }
-
-
-
-
-

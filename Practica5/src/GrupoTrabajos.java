@@ -46,9 +46,12 @@ public class GrupoTrabajos {
         horas = sc.nextInt();
 
         for (int i = 0; i < trabajo.size(); i++) {
-            if (id == i && !trabajo.get(id).getFinalizado() && horas > 0) {
-                trabajo.get(id).setnHoras(horas);
-                // break;
+            if (id == i) {
+                if (!trabajo.get(id).getFinalizado()) {
+                    if (horas > 0) {
+                        trabajo.get(id).setnHoras(horas);     
+                    }
+                }
             } else {
                 System.out.println("El trabajo esta finalizado o las horas son incorrectas");
             }
@@ -62,8 +65,27 @@ public class GrupoTrabajos {
     }
 
     public void AumentaCostePiezas() {
+        Scanner sc= new Scanner(System.in);
+        int id;
+        double costePiezas;
+
+        System.out.println("Introduce el id de trabajo");
+        id = sc.nextInt();
+
+        System.out.println("Introduce el coste de las piezas");
+        costePiezas = sc.nextDouble();
+
         for (int i = 0; i < trabajo.size(); i++) {
-            trabajo.get(i)
+            if (id == i && trabajo.get(i).getTipoTrabajo() == 1 ||trabajo.get(i).getTipoTrabajo() == 2) {
+                if (!trabajo.contains(trabajo.get(id))) {
+                    System.out.println("La id no existe");
+                }
+                if (costePiezas < 0) {
+                    System.out.println("El coste es incorrecto");
+                }
+                trabajo.get(i).setCostePiezas(costePiezas);
+                trabajo.get(i).calculoTrabajo();
+            }
         }
     }
 }

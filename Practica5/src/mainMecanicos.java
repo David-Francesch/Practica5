@@ -28,7 +28,7 @@ public class mainMecanicos {
                     grupotrabajo.aumentaHoras();
                     break;
                 case 3:
-                    
+                    grupotrabajo.AumentaCostePiezas();
                     break;
                 case 4:
                     
