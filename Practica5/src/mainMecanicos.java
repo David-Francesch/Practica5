@@ -1,5 +1,5 @@
-public class App {
+public class mainMecanicos {
     public static void main(String[] args) throws Exception {
-
+        
     }
 }
