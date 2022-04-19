@@ -30,6 +30,10 @@ public class Trabajos {
         return nHoras;
     }
 
+    public boolean getFinalizado(){
+        return finalizado;
+    }
+
     public void setIdTrabajo(int idTrabajo) {
         this.idTrabajo = idTrabajo;
     }
@@ -43,18 +47,20 @@ public class Trabajos {
     }
     
     public void setnHoras(int nHoras) {
-        this.nHoras = nHoras;
+        this.nHoras += nHoras;
     }
 
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
     }
-    
+
     @Override
     public String toString() {
         // TODO Auto-generated method stub
         return "Id: "+idTrabajo+", Tipo de trabajo: "+tipoTrabajo+", Descripcion: "+descripcion+", Num horas: "+nHoras+", Finalizado: "+finalizado;
     }
+
+    
 
 }
 

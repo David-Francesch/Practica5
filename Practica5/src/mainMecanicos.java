@@ -25,7 +25,7 @@ public class mainMecanicos {
                     grupotrabajo.newTrabajo();
                     break;
                 case 2:
-                    
+                    grupotrabajo.aumentaHoras();
                     break;
                 case 3:
                     
@@ -34,7 +34,7 @@ public class mainMecanicos {
                     
                     break;
                 case 5:
-                    
+                    grupotrabajo.mostrarTodos();
                     break;
                 default:
                     break;
