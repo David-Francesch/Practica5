@@ -18,6 +18,7 @@ public class mainMecanicos {
             System.out.println("3. Aumenta coste de piezas");
             System.out.println("4. Finalizar trabajo");
             System.out.println("5. Muestra trabajo");
+            System.out.println("6. Salir");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -31,12 +32,16 @@ public class mainMecanicos {
                     grupotrabajo.AumentaCostePiezas();
                     break;
                 case 4:
-                    
+                    grupotrabajo.finalizarTrabajo();
                     break;
                 case 5:
                     grupotrabajo.mostrarTodos();
                     break;
+                case 6:
+                    menu = false;
+                    break;
                 default:
+                    System.out.println("Introduce una opcion valida");
                     break;
             }
         } while (menu);

@@ -46,23 +46,19 @@ public class GrupoTrabajos {
         horas = sc.nextInt();
 
         for (int i = 0; i < trabajo.size(); i++) {
-            if (id == i) {
-                if (!trabajo.get(id).getFinalizado()) {
-                    if (horas > 0) {
+            if (id == i && !trabajo.get(id).getFinalizado() && horas > 0) {
                         trabajo.get(id).setnHoras(horas);     
-                    }
-                }
             } else {
                 System.out.println("El trabajo esta finalizado o las horas son incorrectas");
             }
         }
     }
 
-    public void mostrarTodos() {
-        for (int i = 0; i < trabajo.size(); i++) {
-            System.out.println(trabajo.get(i).toString());
-        }
-    }
+    // public void mostrarTodos() {
+    //     for (int i = 0; i < trabajo.size(); i++) {
+    //         System.out.println(trabajo.get(i).toString());
+    //     }
+    // }
 
     public void AumentaCostePiezas() {
         Scanner sc= new Scanner(System.in);
@@ -85,6 +81,38 @@ public class GrupoTrabajos {
                 }
                 trabajo.get(i).setCostePiezas(costePiezas);
                 trabajo.get(i).calculoTrabajo();
+            }
+        }
+    }
+
+    public void finalizarTrabajo() {
+        Scanner sc= new Scanner(System.in);
+        int id;
+
+        System.out.println("Introduce el id de trabajo");
+        id = sc.nextInt();
+
+        for (int i = 0; i < trabajo.size(); i++) {
+            if (id == i && !trabajo.contains(trabajo.get(id))) {
+                System.out.println("La id no existe");
+            }else{
+                trabajo.get(id).setFinalizado(true);
+            }
+        }
+    }
+
+    public void mostrarTodos() {
+        Scanner sc= new Scanner(System.in);
+        int id;
+
+        System.out.println("Introduce el id de trabajo");
+        id = sc.nextInt();
+
+        for (int i = 0; i < trabajo.size(); i++) {
+            if (id == i && trabajo.contains(trabajo.get(id))) {
+                System.out.println(trabajo.get(id).toString());
+            }else{
+                System.out.println("La id introducida no existe");
             }
         }
     }
