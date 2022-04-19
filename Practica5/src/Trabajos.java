@@ -6,6 +6,7 @@ public class Trabajos {
     private int nHoras = 0;
     private boolean finalizado;
     private int tipoTrabajo;
+    private int costePiezas;
 
     public Trabajos(int idTrabajo, int tipoTrabajo, String descripcion, int nHoras, boolean finalizado) {
         this.idTrabajo = idTrabajo;
@@ -34,6 +35,10 @@ public class Trabajos {
         return finalizado;
     }
 
+    public int getCostePiezas() {
+        return costePiezas;
+    }
+
     public void setIdTrabajo(int idTrabajo) {
         this.idTrabajo = idTrabajo;
     }
@@ -52,6 +57,10 @@ public class Trabajos {
 
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
+    }
+
+    public void setCostePiezas(int costePiezas) {
+        this.costePiezas = costePiezas;
     }
 
     @Override

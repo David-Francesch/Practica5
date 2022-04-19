@@ -60,4 +60,10 @@ public class GrupoTrabajos {
             System.out.println(trabajo.get(i).toString());
         }
     }
+
+    public void AumentaCostePiezas() {
+        for (int i = 0; i < trabajo.size(); i++) {
+            trabajo.get(i)
+        }
+    }
 }
