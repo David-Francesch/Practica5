@@ -49,11 +49,11 @@ public class Trabajos {
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
     }
-
-    public void costes() {
-        
-        
-
+    
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Id: "+idTrabajo+", Tipo de trabajo: "+tipoTrabajo+", Descripcion: "+descripcion+", Num horas: "+nHoras+", Finalizado: "+finalizado;
     }
 
 }

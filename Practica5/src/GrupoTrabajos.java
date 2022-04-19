@@ -28,5 +28,10 @@ public class GrupoTrabajos {
         
         Trabajos test = new Trabajos(trabajo.size(),opcion, descripcion , 0, false);
         trabajo.add(test);
+        mostrarTrabajo();
+    }
+
+    public void mostrarTrabajo() {
+        System.out.println(trabajo.get(trabajo.size()-1).toString());
     }
 }
