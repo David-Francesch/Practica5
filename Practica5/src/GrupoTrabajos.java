@@ -46,7 +46,7 @@ public class GrupoTrabajos {
         horas = sc.nextInt();
 
         for (int i = 0; i < trabajo.size(); i++) {
-            if (id == i && !trabajo.get(id).getFinalizado() && horas > 0) {
+            if (trabajo.get(id).getFinalizado() && horas > 0) {
                         trabajo.get(id).setnHoras(horas);     
             } else {
                 System.out.println("El trabajo esta finalizado o las horas son incorrectas");
