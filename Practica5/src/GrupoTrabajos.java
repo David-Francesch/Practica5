@@ -1,3 +1,5 @@
+package Practicas3erTri.Practica5.Practica5.src;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
